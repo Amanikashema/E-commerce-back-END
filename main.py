@@ -119,6 +119,23 @@ def insert_products():
         return jsonify(msg)
 
 
+@app.route('/show-products/', methods=["GET"])
+def show_products():
+    data = []
+    try:
+        with sqlite3.connect('database.db') as con:
+            con.row_factory = dict_factory
+            cur = con.cursor()
+            cur.execute("SELECT * FROM PRODUCTS")
+            data = cur.fetchall()
+    except Exception as e:
+        con.rollback()
+        print("There was an error fetching products from the database." + str(e) )
+    finally:
+        con.close()
+        return jsonify(data)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 
