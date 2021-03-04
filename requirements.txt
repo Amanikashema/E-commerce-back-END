@@ -1,7 +1,7 @@
 altgraph==0.17
+apturl==0.5.2
 asgiref==3.3.0
 bcrypt==3.1.7
-blinker==1.4
 Brlapi==0.7.0
 certifi==2020.6.20
 chardet==3.0.4
@@ -22,6 +22,7 @@ Flask==1.1.2
 Flask-Cors==3.0.10
 Flask-Mail==0.9.1
 future==0.18.2
+gunicorn==20.0.4
 heroku==0.1.4
 httplib2==0.14.0
 idna==2.8
