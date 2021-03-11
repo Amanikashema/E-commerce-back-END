@@ -36,7 +36,7 @@ def dict_factory(cursor,row):
 
 @app.route('/register_user/', methods=['POST','GET'])
 def register_user():
-    msg = None
+    global msg
     if request.method == "POST":
         try:
             post_data = request.get_json()
